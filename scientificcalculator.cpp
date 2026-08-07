@@ -1,4 +1,5 @@
 #include <iostream>
+#include <optional>
 
 using namespace std;
 
@@ -12,6 +13,33 @@ void DisplayMenu() {
     cout << "Choose an option:";
 }
 
+void GetNumbers(double& a, double& b) {
+    cout << "Enter First Number:";
+    cin >> a;
+    cout << "Enter Second Number:";
+    cin >> b;
+}
+
+double Addition(double a, double b) {
+    return a + b;
+}
+
+double Subtraction(double a, double b) {
+    return a - b;
+}
+
+double Multiplication(double a, double b) {
+    return a * b;
+}
+
+optional<double> Division(double a, double b) {
+    if (b != 0) {
+        return a / b;
+    }
+    else {
+        return nullopt;
+    }
+}
 
 int main()
 {
@@ -25,45 +53,35 @@ int main()
 
         switch (choice) {
         case 1:
-            cout << "Enter First Number:";
-            cin >> a;
-            cout << "Enter Second Number:";
-            cin >> b;
-            result = a + b;
+            GetNumbers(a, b);
+            result = Addition(a, b);
             cout << result << "\n";
             break;
 
         case 2:
-            cout << "Enter First Number:";
-            cin >> a;
-            cout << "Enter Second Number:";
-            cin >> b;
-            result = a - b;
+            GetNumbers(a, b);
+            result = Subtraction(a, b);
             cout << result << "\n";
             break;
 
         case 3:
-            cout << "Enter First Number:";
-            cin >> a;
-            cout << "Enter Second Number:";
-            cin >> b;
-            result = a * b;
+            GetNumbers(a, b);
+            result = Multiplication(a, b);
             cout << result << "\n";
             break;
 
-        case 4:
-            cout << "Enter First Number:";
-            cin >> a;
-            cout << "Enter Second Number:";
-            cin >> b;
-            if (b == 0) {
-                cout << "Error!\n";
+        case 4: {
+            GetNumbers(a, b);
+            optional<double> DivisionResult = Division(a, b);
+
+            if (DivisionResult) {
+                cout << *DivisionResult << "\n";
             }
             else {
-                result = a / b;
-                cout << result << "\n";
+                cout << "Error\n";
             }
             break;
+        }
 
         case 0:
             cout << "Goodbye!\n";
