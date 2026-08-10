@@ -13,6 +13,19 @@ double GetValidNumber(std::string prompt) {
         std::cout << "Invalid Number. Try Again!\n";
     }
 }
+
+int GetValidInteger(std::string prompt) {
+    std::string input;
+    while (true) {
+        std::cout << prompt;
+        getline(std::cin, input);
+        if (isInteger(input)) {
+            return StringToInteger(input);
+        }
+        std::cout << "Invalid Integer. Please Try Again!\n";
+    }
+}
+
 void GetNumbers(double& a, double& b) {
     a = GetValidNumber("Enter First Number: ");
     b = GetValidNumber("Enter Second Number: ");
@@ -22,7 +35,11 @@ bool isInteger(std::string input) {
     if (input.empty()) {
         return false;
     }
-    for (int i = 0; i < input.size(); i++) {
+    int i = 0;
+    if (input[i] == '-' && input.size() > 1) {
+        i++;
+    }
+    for (; i < input.size(); i++) {
         if (input[i] < '0' || input[i] > '9') {
             return false;
         }
@@ -31,10 +48,18 @@ bool isInteger(std::string input) {
 }
 
 int StringToInteger(std::string input) {
-    int result = 0;
-    for (int i = 0; i < input.size(); i++) {
+    int result = 0, i = 0;
+    bool isNegative = false;
+    if (input[i] == '-') {
+        isNegative = true;
+        i++;
+    }
+    for (; i < input.size(); i++) {
         result *= 10;
         result += (input[i] - '0');
+    }
+    if (isNegative) {
+        result *= -1;
     }
     return result;
 }

@@ -7,7 +7,7 @@
 
 int main()
 {
-    int choice;
+    int choice, n;
     double result, a, b;
 
     do {
@@ -46,7 +46,28 @@ int main()
             }
             break;
         }
-
+        case 5:
+            GetNumbers(a, b);
+            result = Power(a, b);
+            std::cout << result << "\n";
+            break;
+        case 6: {
+            a = GetValidNumber("Enter Radicand: ");
+            n = GetValidInteger("Enter Root Degree: ");
+            std::optional<double> result = Root(a, n);
+            if (result) {
+                std::cout << *result << "\n";
+            }
+            else {
+                std::cout << "Invalid root combination.\n";
+            }
+            break;
+        }
+        case 7:
+            a = GetValidNumber("Enter Number: ");
+            result = AbsoluteValue(a);
+            std::cout << result << "\n";
+            break;
         case 0:
             std::cout << "Goodbye!\n";
             break;

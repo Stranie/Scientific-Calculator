@@ -7,3 +7,4 @@ int StringToInteger(std::string input);
 int GetChoice();
 bool isDouble(std::string input);
 double GetValidNumber(std::string prompt);
+int GetValidInteger(std::string prompt);
