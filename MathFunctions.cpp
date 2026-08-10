@@ -1,6 +1,14 @@
 #include "MathFunctions.h"
 #include<cmath>
+#include<numbers>
 
+constexpr double EPSILON = 1e-12;
+double NormaliseResult(double a) {
+    if (AbsoluteValue(a) < EPSILON) {
+        a = 0;
+    }
+    return a;
+}
 
 double Addition(double a, double b) {
     return a + b;
@@ -44,3 +52,34 @@ double AbsoluteValue(double a) {
     }
     return a;
 }
+
+double DegreestoRadians(double a) {
+    return a * (std::numbers::pi / 180);
+}
+
+double Sine(double a) {
+    double result;
+    a = DegreestoRadians(a);
+    result = std::sin(a);
+    result = NormaliseResult(result);
+    return result;
+}
+
+double Cosine(double a) {
+    double result;
+    a = DegreestoRadians(a);
+    result = std::cos(a);
+    result = NormaliseResult(result);
+    return result;
+}
+
+std::optional<double> Tangent(double a) {
+    a = DegreestoRadians(a);
+    if (AbsoluteValue(std::cos(a)) < EPSILON) {
+        return std::nullopt;
+    }
+    double result = std::tan(a);
+    result = NormaliseResult(result);
+    return result;
+}
+

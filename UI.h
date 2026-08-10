@@ -1,4 +1,7 @@
 #pragma once
 
-void DisplayMenu();
+void DisplayMainMenu();
+void DisplayBasicMenu();
+void DisplayPowerRootMenu();
+void DisplayTrigonometryMenu();
 

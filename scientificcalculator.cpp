@@ -1,72 +1,25 @@
-#include "MathFunctions.h"
 #include "InputFunctions.h"
 #include "UI.h"
+#include "Calculator.h"
 #include <iostream>
-#include <optional>
-#include <string>
 
 int main()
 {
-    int choice, n;
-    double result, a, b;
+    int choice;
 
     do {
-
-        DisplayMenu();
+        DisplayMainMenu();
         choice = GetChoice();
 
-        switch (choice) {
+        switch(choice){
         case 1:
-            GetNumbers(a, b);
-            result = Addition(a, b);
-            std::cout << result << "\n";
+            BasicOperations();
             break;
-
         case 2:
-            GetNumbers(a, b);
-            result = Subtraction(a, b);
-            std::cout << result << "\n";
+            PowersandRoots();
             break;
-
         case 3:
-            GetNumbers(a, b);
-            result = Multiplication(a, b);
-            std::cout << result << "\n";
-            break;
-
-        case 4: {
-            GetNumbers(a, b);
-            std::optional<double> DivisionResult = Division(a, b);
-
-            if (DivisionResult) {
-                std::cout << *DivisionResult << "\n";
-            }
-            else {
-                std::cout << "Error\n";
-            }
-            break;
-        }
-        case 5:
-            GetNumbers(a, b);
-            result = Power(a, b);
-            std::cout << result << "\n";
-            break;
-        case 6: {
-            a = GetValidNumber("Enter Radicand: ");
-            n = GetValidInteger("Enter Root Degree: ");
-            std::optional<double> result = Root(a, n);
-            if (result) {
-                std::cout << *result << "\n";
-            }
-            else {
-                std::cout << "Invalid root combination.\n";
-            }
-            break;
-        }
-        case 7:
-            a = GetValidNumber("Enter Number: ");
-            result = AbsoluteValue(a);
-            std::cout << result << "\n";
+            Trigonometry();
             break;
         case 0:
             std::cout << "Goodbye!\n";
@@ -78,5 +31,7 @@ int main()
         }
     } while (choice != 0);
 }
+
+        
 
 

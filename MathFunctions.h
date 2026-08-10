@@ -8,3 +8,8 @@ std::optional<double> Division(double a, double b);
 double Power(double a, double b);
 std::optional<double> Root(double a, int n);
 double AbsoluteValue(double a);
+double DegreestoRadians(double a);
+double Sine(double a);
+double Cosine(double a);
+std::optional<double> Tangent(double a);
+

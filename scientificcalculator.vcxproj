@@ -139,12 +139,14 @@
     </Manifest>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Calculator.cpp" />
     <ClCompile Include="InputFunctions.cpp" />
     <ClCompile Include="MathFunctions.cpp" />
     <ClCompile Include="scientificcalculator.cpp" />
     <ClCompile Include="UI.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Calculator.h" />
     <ClInclude Include="InputFunctions.h" />
     <ClInclude Include="MathFunctions.h" />
     <ClInclude Include="UI.h" />
