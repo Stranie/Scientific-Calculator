@@ -12,4 +12,6 @@ double DegreestoRadians(double a);
 double Sine(double a);
 double Cosine(double a);
 std::optional<double> Tangent(double a);
+std::optional<double> NaturalLogarithm(double a);
+std::optional<double> Logarithm(double a, double b);
 

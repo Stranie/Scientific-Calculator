@@ -26,6 +26,8 @@ void DisplayPowerRootMenu(){
     std::cout << "=== Powers and Roots ===\n";
     std::cout << "1. Power\n";
     std::cout << "2. Root\n";
+    std::cout << "3. Natural Logarithm\n";
+    std::cout << "4. Logarithm\n";
     std::cout << "0. Back\n";
     std::cout << "Choose an option: ";
 }

@@ -84,6 +84,29 @@ void PowersandRoots() {
             }
             break;
         }
+        case 3: {
+            a = GetValidNumber("Enter a Number: ");
+            std::optional<double>naturallogarithmresult = NaturalLogarithm(a);
+            if (naturallogarithmresult) {
+                std::cout << *naturallogarithmresult << "\n";
+            }
+            else {
+                std::cout << "Invalid Number. Try Again!\n";
+            }
+            break;
+        }
+        case 4: {
+            a = GetValidNumber("Enter a Number: ");
+            b = GetValidNumber("Enter Logarithm Base: ");
+            std::optional<double> logarithmresult = Logarithm(a, b);
+            if (logarithmresult) {
+                std::cout << *logarithmresult << "\n";
+            }
+            else {
+                std::cout << "Invalid Logarithm Combination. Try Again!\n";
+            }
+            break;
+        }
         case 0:
             break;
         default:

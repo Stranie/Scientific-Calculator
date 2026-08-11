@@ -83,3 +83,16 @@ std::optional<double> Tangent(double a) {
     return result;
 }
 
+std::optional<double> NaturalLogarithm(double a) {
+    if (a <= 0) {
+        return std::nullopt;
+    }
+    return std::log(a);
+}
+
+std::optional<double> Logarithm(double a, double b) {
+    if (a <= 0 || b <= 0 || b == 1) {
+        return std::nullopt;
+    }
+    return std::log(a) / std::log(b);
+}
