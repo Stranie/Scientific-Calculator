@@ -5,7 +5,7 @@ double GetValidNumber(std::string prompt) {
     std::string input;
     while(true) {
         std::cout << prompt;
-        getline(std::cin, input);
+        std::getline(std::cin, input);
         if (isDouble(input)) {
             return std::stod(input);
         }
@@ -18,7 +18,7 @@ int GetValidInteger(std::string prompt) {
     std::string input;
     while (true) {
         std::cout << prompt;
-        getline(std::cin, input);
+        std::getline(std::cin, input);
         if (isInteger(input)) {
             return StringToInteger(input);
         }
@@ -66,7 +66,7 @@ int StringToInteger(std::string input) {
 
 int GetChoice() {
     std::string input;
-    getline(std::cin, input);
+    std::getline(std::cin, input);
     
     int result;
     if (isInteger(input)) {

@@ -2,6 +2,6 @@
 
 void DisplayMainMenu();
 void DisplayBasicMenu();
-void DisplayPowerRootMenu();
+void DisplayPowerRootLogMenu();
 void DisplayTrigonometryMenu();
 

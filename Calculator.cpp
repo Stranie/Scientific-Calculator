@@ -62,7 +62,7 @@ void PowersandRoots() {
     int choice, n;
     double a, b, result;
     do {
-        DisplayPowerRootMenu();
+        DisplayPowerRootLogMenu();
         choice = GetChoice();
 
         switch (choice) {

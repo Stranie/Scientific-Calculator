@@ -2,9 +2,10 @@
 #include<iostream>
 
 void DisplayMainMenu() {
-    std::cout << "======= Scientific Calculator =========\n";
+    std::cout << "======= Scientific Calculator =======\n";
+    std::cout << "\n";
     std::cout << "1. Basic Operations\n";
-    std::cout << "2. Powers & Roots\n";
+    std::cout << "2. Powers, Roots & Logarithms\n";
     std::cout << "3. Trigonometry\n";
     std::cout << "0. Exit\n";
     std::cout << "Choose an option: ";
@@ -22,8 +23,9 @@ void DisplayBasicMenu() {
     std::cout << "Choose an option: ";
 }
 
-void DisplayPowerRootMenu(){
-    std::cout << "=== Powers and Roots ===\n";
+void DisplayPowerRootLogMenu(){
+    std::cout << "=== Powers, Roots & Logarithms ===\n";
+    std::cout << "\n";
     std::cout << "1. Power\n";
     std::cout << "2. Root\n";
     std::cout << "3. Natural Logarithm\n";
